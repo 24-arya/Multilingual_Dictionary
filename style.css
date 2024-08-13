@@ -13,6 +13,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
 }
 
 .container {
@@ -20,7 +21,7 @@ body {
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     padding: 40px;
-    width: 90%;
+    width: 100%;
     max-width: 600px;
 }
 
@@ -34,65 +35,29 @@ h1 {
 
 .input-group {
     display: flex;
+    flex-wrap: wrap;
     margin-bottom: 20px;
     position: relative;
 }
 
-
-
-
-
-#wordInput {
+#wordInput, #languageSelect {
     flex-grow: 1;
     padding: 12px;
     border: 2px solid #ddd;
-    border-radius: 10px 0 0 10px;
     font-size: 16px;
     outline: none;
     transition: border-color 0.3s ease-in-out;
 }
 
-#wordInput:focus {
-    border-color: #57b1f7;
+#wordInput {
+    border-radius: 10px 0 0 10px;
 }
 
 #languageSelect {
-    padding: 12px;
-    border: 2px solid #ddd;
-    border-left: none;
-    font-size: 16px;
     background-color: #f8f9fa;
     border-radius: 0 10px 10px 0;
     appearance: none;
-    outline: none;
 }
-
-.button-wrapper {
-    position: absolute;
-    right: 0;
-    top: 0;
-    transform: translate(-100%, -50%);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 button {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -104,6 +69,9 @@ button {
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 100%;
+    margin-top: 10px;
 }
 
 button:hover {
@@ -129,14 +97,29 @@ button:active {
     margin-right: 8px;
 }
 
+/* Media Queries for Responsive Design */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
 
+    .input-group {
+        flex-direction: column;
+    }
 
+    #wordInput, #languageSelect, #microphoneBtn {
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
 
+    button {
+        padding: 10px;
+    }
 
-
-
-
-
+    .speech-modal-content {
+        width: 90%;
+    }
+}
 
 /* Animated Gradient for Button */
 @keyframes gradient {
@@ -162,29 +145,6 @@ button:active {
     animation: none;
     background-position: 0% 50%;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Existing styles... */
 
 /* Speech Modal styles */
 .speech-modal {
@@ -222,9 +182,6 @@ button:active {
     font-size: 1.2em;
     color: #333;
 }
-
-
-
 
 .speech-modal-body {
     padding: 20px 0;
